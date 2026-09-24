@@ -1,0 +1,87 @@
+title: "You're TALLER in the Morning?! 📏 #shorts"
+series: facts
+format: short
+bg: body
+description: |
+  You're a tiny bit taller when you wake up than at bedtime! 📏
+  Find out why, and why astronauts grow even more in space. 🚀
+
+  🌟 Wonder Bites: bite-sized facts for curious kids. A new fun fact every weekday!
+tags: [human body facts for kids, taller in the morning, spine for kids, astronauts, science for kids, fun facts for kids, wonder bites]
+thumbnail:
+  text: "TALLER IN THE MORNING?!"
+  sprites: [child, sun with face]
+  bg: sunny
+
+segments:
+  - say: You are a little bit taller in the morning than at bedtime!
+    headline: "TALLER?!"
+    bg: sunny
+    sprites:
+      - {name: child, x: 0.5, y: 0.46, size: 0.36, motion: bounce}
+      - {name: straight ruler, x: 0.8, y: 0.42, size: 0.16, motion: float, rotate: 45, delay: 0.5}
+
+  - say: Your backbone is a stack of little bones, with squishy cushions in between.
+    headline: "SQUISHY CUSHIONS"
+    sprites:
+      - {name: bone, x: 0.5, y: 0.33, size: 0.3, motion: float}
+      - {name: bone, x: 0.5, y: 0.46, size: 0.3, motion: float, delay: 0.3}
+      - {name: bone, x: 0.5, y: 0.59, size: 0.3, motion: float, delay: 0.6}
+
+  - say: All day long, while you stand, walk, and play, gravity squishes those cushions a tiny bit.
+    headline: "SQUISH!"
+    bg: sunny
+    sprites:
+      - {name: child, x: 0.5, y: 0.47, size: 0.36, motion: walk, to: [0.5, 0.47]}
+      - {name: down arrow, x: 0.5, y: 0.25, size: 0.13, motion: pulse, delay: 0.5}
+
+  - say: At night, when you lie down to sleep, the cushions puff back up!
+    headline: "PUFF!"
+    bg: night
+    bg_params: {trees: false}
+    sprites:
+      - {name: bed, x: 0.5, y: 0.5, size: 0.46, motion: float}
+      - {name: zzz, x: 0.72, y: 0.34, size: 0.14, motion: float, delay: 0.5}
+
+  - say: So in the morning, you can be about one centimeter taller. That's about as wide as your fingernail!
+    headline: "ABOUT 1 CM"
+    bg: sunny
+    sprites:
+      - {name: sun with face, x: 0.78, y: 0.3, size: 0.2, motion: float}
+      - {name: child, x: 0.45, y: 0.46, size: 0.38, motion: bounce}
+
+  - say: Astronauts grow even more! In space, there's no gravity squishing their backbones.
+    headline: "SPACE STRETCH"
+    bg: space
+    sprites:
+      - {name: astronaut, x: 0.5, y: 0.45, size: 0.4, motion: float}
+      - {name: rocket, x: 0.2, y: 0.3, size: 0.14, motion: float, delay: 0.5}
+
+  - say: They can grow a few centimeters taller! But they shrink back down after they come home to Earth.
+    headline: "UP TO 3% TALLER"
+    bg: space
+    sprites:
+      - {name: astronaut, x: 0.5, y: 0.45, size: 0.4, motion: float}
+      - {name: globe showing americas, x: 0.8, y: 0.6, size: 0.18, motion: spin, delay: 0.6}
+
+  - say: Quick quiz! When are you tallest, morning or night? Say it out loud!
+    headline: "QUIZ TIME!"
+    bg: party
+    bg_params: {scheme: sky}
+    sprites:
+      - {name: bitsy, x: 0.5, y: 0.46, size: 0.44, motion: bounce}
+      - {name: red question mark, x: 0.82, y: 0.3, size: 0.15, motion: wiggle, delay: 0.5}
+    pause: 1.2
+
+  - say: In the morning! Stretchy science! See you next time on Wonder Bites!
+    headline: "MORNING!"
+    bg: party
+    bg_params: {scheme: sky}
+    sprites:
+      - {name: bitsy_wink, x: 0.5, y: 0.46, size: 0.44, motion: bounce}
+      - {name: party popper, x: 0.2, y: 0.3, size: 0.17, motion: wiggle, delay: 0.3}
+
+sources:
+  - "Scientific American, 'Strange but True: Astronauts Get Taller in Space': https://www.scientificamerican.com/article/astronauts-get-taller-in-space/"
+  - "Space.com, 'New Study Examines Why Astronauts Grow Taller in Space': https://www.space.com/19116-astronauts-taller-space-spines.html"
+  - "Daily height change from spinal disc compression, e.g. Reilly, Tyrrell & Troup (1984), 'Circadian variation in human stature', Chronobiology International"

@@ -1,0 +1,14 @@
+# rendered videos, caches and downloaded models
+output/
+build/
+voices/
+
+# OAuth client + tokens: never commit
+secrets/
+
+__pycache__/
+*.egg-info/
+.venv/
+venv/
+.pytest_cache/
+.DS_Store

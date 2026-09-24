@@ -1,0 +1,79 @@
+title: "Mushrooms That GLOW in the Dark?! 🍄 Spooky Bites #shorts"
+series: spooky
+format: short
+bg: night
+description: |
+  👻 Spooky Bites: creepy-but-true!
+  Deep in the dark woods, something glows… and it's a MUSHROOM! 🍄✨
+  Learn about "foxfire" and why some mushrooms make their own light.
+
+  🌟 Wonder Bites: bite-sized facts for curious kids. Spooky Bites every Friday!
+tags: [glowing mushrooms, bioluminescence for kids, foxfire, spooky facts for kids, halloween for kids, nature facts for kids, spooky bites, wonder bites]
+thumbnail:
+  text: "GLOWING MUSHROOMS!"
+  sprites: [mushroom, ghost]
+  bg: night
+
+segments:
+  - say: Deep in the woods, on a dark, dark night, something is glowing.
+    headline: "SPOOKY BITES"
+    sprites:
+      - {name: glowing star, x: 0.5, y: 0.48, size: 0.2, motion: pulse, enter: fade}
+
+  - say: Is it a ghost? Nope! It's a mushroom!
+    headline: "A MUSHROOM?!"
+    sprites:
+      - {name: ghost, x: 0.3, y: 0.42, size: 0.28, motion: float, enter: fade}
+      - {name: mushroom, x: 0.66, y: 0.5, size: 0.34, motion: bounce, delay: 1.3}
+
+  - say: Some mushrooms make their own light. Scientists know of more than seventy kinds!
+    headline: "70+ KINDS"
+    sprites:
+      - {name: mushroom, x: 0.3, y: 0.52, size: 0.24, motion: float}
+      - {name: mushroom, x: 0.55, y: 0.44, size: 0.3, motion: float, delay: 0.3}
+      - {name: mushroom, x: 0.78, y: 0.54, size: 0.2, motion: float, delay: 0.6}
+      - {name: sparkles, x: 0.55, y: 0.28, size: 0.14, motion: pulse, delay: 0.9}
+
+  - say: Long ago, people saw old logs glowing in the forest, and called the spooky light foxfire.
+    headline: "FOXFIRE"
+    sprites:
+      - {name: wood, x: 0.5, y: 0.54, size: 0.4, motion: float}
+      - {name: fox, x: 0.5, y: 0.36, size: 0.26, motion: peek, enter: none, delay: 0.5}
+
+  - say: The glow comes from a special chemical reaction inside the mushroom, a bit like a firefly's light.
+    headline: "NATURE'S NIGHT-LIGHT"
+    sprites:
+      - {name: mushroom, x: 0.5, y: 0.48, size: 0.34, motion: pulse}
+      - {name: light bulb, x: 0.78, y: 0.3, size: 0.13, motion: float, delay: 0.6}
+
+  - say: Why glow? Scientists think the light invites bugs to visit at night.
+    headline: "BUG PARTY"
+    sprites:
+      - {name: mushroom, x: 0.5, y: 0.5, size: 0.32, motion: float}
+      - {name: lady beetle, x: 0.2, y: 0.36, size: 0.12, motion: walk, to: [0.4, 0.42]}
+      - {name: bug, x: 0.82, y: 0.34, size: 0.12, motion: walk, to: [0.62, 0.4], flip: true}
+
+  - say: The bugs pick up the mushroom's tiny spores, and carry them to new places, so new mushrooms can grow!
+    headline: "SPORE TAXI"
+    sprites:
+      - {name: lady beetle, x: 0.3, y: 0.42, size: 0.16, motion: walk, to: [0.75, 0.36]}
+      - {name: mushroom, x: 0.22, y: 0.56, size: 0.2, motion: float}
+      - {name: mushroom, x: 0.8, y: 0.56, size: 0.16, motion: pop, delay: 2.2}
+
+  - say: Quick quiz, if you dare! What did people long ago call the mushroom glow?
+    headline: "QUIZ TIME!"
+    sprites:
+      - {name: ghost, x: 0.5, y: 0.45, size: 0.36, motion: float}
+      - {name: red question mark, x: 0.8, y: 0.3, size: 0.14, motion: wiggle, delay: 0.5}
+    pause: 1.4
+
+  - say: Foxfire! Not a ghost after all. Sleep tight, and see you next Spooky Bites!
+    headline: "FOXFIRE!"
+    sprites:
+      - {name: ghost, x: 0.5, y: 0.45, size: 0.36, motion: bounce}
+      - {name: mushroom, x: 0.22, y: 0.56, size: 0.18, motion: wiggle, delay: 0.3}
+
+sources:
+  - "Encyclopaedia Britannica, Foxfire: https://www.britannica.com/science/foxfire"
+  - "Oliveira, A. G. et al. (2015). 'Circadian control sheds light on fungal bioluminescence', Current Biology 25(7): https://doi.org/10.1016/j.cub.2015.02.021"
+  - "Ask A Biologist (Arizona State University), Mushroom bioluminescence: https://askabiologist.asu.edu/plosable/mushroom-light"

@@ -1,0 +1,71 @@
+title: "Bananas Are BERRIES (But Strawberries Aren't)?! 🍌 #shorts"
+series: facts
+format: short
+bg: party
+bg_params: {scheme: sunset}
+description: |
+  To a plant scientist, a banana is a berry… and a strawberry is NOT! 🍌🍓
+  Learn the berry rule, and what those little dots on a strawberry really are.
+
+  🌟 Wonder Bites: bite-sized facts for curious kids. A new fun fact every weekday!
+tags: [bananas are berries, fruit facts for kids, plants for kids, strawberry, science for kids, fun facts for kids, wonder bites]
+thumbnail:
+  text: "BANANA = BERRY?!"
+  sprites: [banana, strawberry]
+  bg: party
+
+segments:
+  - say: Bananas are berries, but strawberries are not!
+    headline: "WAIT, WHAT?!"
+    sprites:
+      - {name: banana, x: 0.3, y: 0.45, size: 0.34, motion: bounce}
+      - {name: strawberry, x: 0.72, y: 0.45, size: 0.3, motion: wiggle, delay: 0.5}
+
+  - say: To plant scientists, a berry is a fruit that grows from one flower, with its seeds on the inside.
+    headline: "THE BERRY RULE"
+    bg: meadow
+    sprites:
+      - {name: hibiscus, x: 0.5, y: 0.42, size: 0.3, motion: sway}
+      - {name: seedling, x: 0.5, y: 0.62, size: 0.14, motion: pop, delay: 0.8}
+
+  - say: Bananas pass the test! Those tiny dark specks in the middle are their seeds.
+    headline: "BANANA: BERRY!"
+    sprites:
+      - {name: banana, x: 0.5, y: 0.45, size: 0.4, motion: bounce}
+      - {name: check mark button, x: 0.8, y: 0.3, size: 0.14, motion: pop, delay: 0.6}
+
+  - say: Strawberries don't. The little dots on the outside are actually tiny fruits, each with a seed inside!
+    headline: "STRAWBERRY: NOPE"
+    sprites:
+      - {name: strawberry, x: 0.5, y: 0.45, size: 0.36, motion: wiggle}
+      - {name: cross mark, x: 0.8, y: 0.3, size: 0.13, motion: pop, delay: 0.6}
+
+  - say: And guess what else counts as a berry? Grapes, tomatoes, and even pumpkins!
+    headline: "BERRY SURPRISE"
+    sprites:
+      - {name: grapes, x: 0.22, y: 0.45, size: 0.22, motion: bounce}
+      - {name: tomato, x: 0.5, y: 0.45, size: 0.22, motion: bounce, delay: 0.4}
+      - {name: jack-o-lantern, x: 0.78, y: 0.45, size: 0.22, motion: bounce, delay: 0.8}
+
+  - say: People named fruits long before scientists made the berry rule. That's why the names are so mixed up!
+    headline: "MIXED-UP NAMES"
+    sprites:
+      - {name: books, x: 0.5, y: 0.46, size: 0.34, motion: float}
+
+  - say: Quick quiz! Which one is a berry, a banana or a strawberry? Say it out loud!
+    headline: "QUIZ TIME!"
+    sprites:
+      - {name: banana, x: 0.3, y: 0.46, size: 0.3, motion: float}
+      - {name: strawberry, x: 0.7, y: 0.46, size: 0.26, motion: float}
+      - {name: red question mark, x: 0.5, y: 0.3, size: 0.13, motion: wiggle, delay: 0.5}
+    pause: 1.2
+
+  - say: The banana! Fruit is funny. See you next time on Wonder Bites!
+    headline: "THE BANANA!"
+    sprites:
+      - {name: banana, x: 0.5, y: 0.46, size: 0.4, motion: bounce}
+      - {name: bitsy_wink, x: 0.18, y: 0.3, size: 0.2, motion: wiggle, delay: 0.3}
+
+sources:
+  - "Live Science, 'Is a banana a berry, and what about strawberries?': https://www.livescience.com/57477-why-are-bananas-considered-berries.html"
+  - "McGill Office for Science and Society, 'Bananas are Berries. Raspberries are Not.': https://www.mcgill.ca/oss/article/did-you-know/bananas-are-berries-raspberries-are-not"

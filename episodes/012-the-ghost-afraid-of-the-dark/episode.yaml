@@ -1,0 +1,128 @@
+title: "The Ghost Who Was Afraid of the Dark 👻 Spooky Bites Story Time for Kids"
+series: spooky
+format: long
+bg: night
+bg_params: {sea: true, trees: false, lighthouse: true, moon: [0.2, 0.16]}
+music: calm
+description: |
+  👻 Spooky Bites story time!
+  At the top of an old lighthouse lives Wisp, a little ghost with a big secret:
+  Wisp is afraid of the dark! But one stormy night, the lighthouse lamp goes out…
+  A gentle, cozy bedtime story about being brave, with a happy ending. 💛
+
+  🌟 Wonder Bites: bite-sized facts for curious kids. Spooky Bites every Friday!
+tags: [bedtime stories for kids, spooky stories for kids, ghost story for kids, not scary story, story time, lighthouse story, being brave, spooky bites, wonder bites]
+thumbnail:
+  text: "AFRAID OF THE DARK?!"
+  sprites: [ghost, candle]
+  bg: night
+  bg_params: {sea: true, trees: false, lighthouse: true, moon: [0.2, 0.16]}
+
+segments:
+  - say: Welcome to Spooky Bites story time. Get cozy, because tonight's tale is a little bit spooky, and a lot bit sweet.
+    headline: "STORY TIME"
+    sprites:
+      - {name: bitsy, x: 0.3, y: 0.5, size: 0.2, motion: float}
+
+  - say: On a rocky island, far out at sea, stood an old lighthouse.
+    sprites: []
+
+  - say: Every night, its big lamp shone out across the water, keeping the ships safe from the rocks.
+    sprites:
+      - {name: sailboat, x: 0.25, y: 0.62, size: 0.12, motion: walk, to: [0.4, 0.62]}
+
+  - say: And at the very top of the lighthouse lived a little ghost named Wisp.
+    headline: "MEET WISP"
+    sprites:
+      - {name: ghost, x: 0.42, y: 0.45, size: 0.2, motion: float, enter: fade}
+
+  - say: Now, most ghosts love the dark. They float down foggy hallways, and whisper, boo!
+    sprites:
+      - {name: ghost, x: 0.42, y: 0.45, size: 0.2, motion: float}
+      - {name: cloud, x: 0.2, y: 0.55, size: 0.14, motion: float, delay: 0.6}
+
+  - say: But Wisp had a secret. Wisp was afraid of the dark!
+    headline: "A SECRET"
+    sprites:
+      - {name: ghost, x: 0.42, y: 0.45, size: 0.22, motion: shake}
+
+  - say: That's why Wisp loved the lighthouse. The lamp glowed all night long, so it was never, ever dark.
+    sprites:
+      - {name: ghost, x: 0.42, y: 0.45, size: 0.2, motion: float}
+      - {name: red heart, x: 0.52, y: 0.33, size: 0.06, motion: pulse, delay: 0.8}
+
+  - say: Until one stormy night. The wind blew, the waves splashed, and flick! The big lamp went out.
+    headline: "THE LIGHT WENT OUT!"
+    bg_params: {sea: true, trees: false, lighthouse: true, lamp_on: false, moon: [0.2, 0.16]}
+    sprites:
+      - {name: cloud with lightning and rain, x: 0.5, y: 0.25, size: 0.16, motion: shake}
+      - {name: ghost, x: 0.42, y: 0.47, size: 0.2, motion: shake}
+
+  - say: Wisp shivered. Out on the water, a little fishing boat was heading home, and now it couldn't see the rocks!
+    bg_params: {sea: true, trees: false, lighthouse: true, lamp_on: false, moon: [0.2, 0.16]}
+    sprites:
+      - {name: sailboat, x: 0.2, y: 0.64, size: 0.12, motion: float}
+      - {name: ghost, x: 0.42, y: 0.47, size: 0.2, motion: shake}
+
+  - say: Wisp wanted to hide under a blanket. But then Wisp thought about the family on that boat.
+    bg_params: {sea: true, trees: false, lighthouse: true, lamp_on: false, moon: [0.2, 0.16]}
+    sprites:
+      - {name: ghost, x: 0.42, y: 0.47, size: 0.2, motion: float}
+      - {name: people hugging, x: 0.2, y: 0.5, size: 0.14, motion: float, delay: 0.8}
+
+  - say: Being brave doesn't mean you're not scared, Wisp whispered. It means you help anyway.
+    headline: "BE BRAVE"
+    bg_params: {sea: true, trees: false, lighthouse: true, lamp_on: false, moon: [0.2, 0.16]}
+    sprites:
+      - {name: ghost, x: 0.42, y: 0.47, size: 0.24, motion: pulse}
+
+  - say: So Wisp floated down the dark, twisty stairs. One step. Two steps. Down, down, down.
+    bg_params: {sea: true, trees: false, lighthouse: true, lamp_on: false, moon: [0.2, 0.16]}
+    sprites:
+      - {name: ghost, x: 0.42, y: 0.35, size: 0.18, motion: walk, to: [0.42, 0.62]}
+
+  - say: At the bottom was the lighthouse keeper's toolbox. And inside it was a brand new light bulb!
+    headline: "A NEW BULB!"
+    bg_params: {sea: true, trees: false, lighthouse: true, lamp_on: false, moon: [0.2, 0.16]}
+    sprites:
+      - {name: toolbox, x: 0.36, y: 0.58, size: 0.14, motion: pop}
+      - {name: light bulb, x: 0.5, y: 0.45, size: 0.12, motion: bounce, delay: 1.2}
+
+  - say: Wisp zoomed back up the stairs, whoosh, and twisted the new bulb into the lamp.
+    bg_params: {sea: true, trees: false, lighthouse: true, lamp_on: false, moon: [0.2, 0.16]}
+    sprites:
+      - {name: ghost, x: 0.42, y: 0.62, size: 0.18, motion: walk, to: [0.62, 0.3]}
+
+  - say: The light blazed across the waves! The little boat saw the rocks just in time, and sailed safely home.
+    headline: "SAFE!"
+    sprites:
+      - {name: sailboat, x: 0.15, y: 0.64, size: 0.12, motion: walk, to: [0.4, 0.66]}
+      - {name: sparkles, x: 0.78, y: 0.2, size: 0.1, motion: pulse, delay: 0.4}
+
+  - say: The next morning, the fishing family left a note on the lighthouse door. It said, thank you, whoever you are!
+    headline: "THANK YOU!"
+    bg: sunny
+    sprites:
+      - {name: envelope with arrow, x: 0.5, y: 0.45, size: 0.18, motion: bounce}
+
+  - say: Wisp glowed so bright with pride, it could have lit up the whole lighthouse all by itself.
+    bg: sunny
+    sprites:
+      - {name: ghost, x: 0.5, y: 0.47, size: 0.26, motion: bounce}
+      - {name: glowing star, x: 0.66, y: 0.3, size: 0.08, motion: pulse, delay: 0.5}
+      - {name: glowing star, x: 0.34, y: 0.3, size: 0.08, motion: pulse, delay: 0.7}
+
+  - say: And from then on, Wisp wasn't quite so afraid of the dark. Because Wisp had learned something. Sometimes, you can be the light.
+    headline: "BE THE LIGHT"
+    sprites:
+      - {name: ghost, x: 0.42, y: 0.45, size: 0.22, motion: float}
+      - {name: candle, x: 0.3, y: 0.55, size: 0.1, motion: pulse, delay: 1.0}
+
+  - say: Sweet dreams, and see you next time on Spooky Bites.
+    headline: "SWEET DREAMS"
+    sprites:
+      - {name: bitsy_wink, x: 0.3, y: 0.5, size: 0.2, motion: float}
+      - {name: crescent moon, x: 0.5, y: 0.3, size: 0.1, motion: float, delay: 0.4}
+
+sources:
+  - "Original story by Wonder Bites."

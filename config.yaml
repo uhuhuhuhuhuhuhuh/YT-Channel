@@ -1,0 +1,110 @@
+# Wonder Bites: channel-wide settings used by the `ytc` toolkit.
+# Paths are relative to the repo root.
+
+channel:
+  name: Wonder Bites
+  handle: "@WonderBitesKids"
+  tagline: Bite-sized facts for curious kids.
+  made_for_kids: true          # sets status.selfDeclaredMadeForKids on upload
+  default_language: en
+  category_id: "27"            # 27 = Education
+
+render:
+  fps: 30
+  short: {width: 1080, height: 1920}
+  long: {width: 1920, height: 1080}
+  crf: 20
+  preset: medium
+  lead_in: 0.35                # seconds of picture before the first word
+  tail: 1.0                    # seconds after the last word
+  transition: 0.3              # background crossfade length
+  watermark: true
+
+# Voices are Piper models (https://github.com/rhasspy/piper). Both below are
+# trained on public-domain LibriVox recordings, so they are safe for a
+# monetised channel. Download them with `ytc voices download`.
+voices:
+  kristin:
+    engine: piper
+    model: voices/en_US-kristin-medium.onnx
+    length_scale: 1.06         # >1 = slower. Kids' content should breathe.
+  norman:
+    engine: piper
+    model: voices/en_US-norman-medium.onnx
+    length_scale: 1.12
+  # Optional online voice (needs network + `pip install edge-tts`). Check the
+  # service's terms yourself before using it on a monetised channel.
+  andrew-edge:
+    engine: edge
+    voice: en-US-AndrewNeural
+    rate: "-5%"
+
+series:
+  facts:
+    voice: kristin
+    music: playful
+    accent: "#FFD23F"
+  spooky:
+    voice: norman
+    music: spooky
+    accent: "#9BE564"
+
+audio:
+  sample_rate: 44100
+  sentence_pause: 0.28         # silence between sentences
+  segment_pause: 0.35          # silence after each segment
+  music_volume: 0.16           # relative to narration
+  duck: 0.55                   # music is multiplied by this while the narrator speaks
+  sfx_volume: 0.35
+  loudness_lufs: -14           # YouTube's reference loudness
+
+palette:
+  sunshine: "#FFD23F"
+  bubblegum: "#FF5DA2"
+  sky: "#3EC1F3"
+  grape: "#7B4DFF"
+  mint: "#3DDC97"
+  ink: "#2B2140"
+  white: "#FFFFFF"
+  slime: "#9BE564"
+  pumpkin: "#FF9F1C"
+
+# AI models for `ytc draft` and `ytc ask`. Pick one per command with
+# --model provider[:model], e.g.  --model openai:gpt-5   --model ollama:llama3.2
+# or set a default for your shell:  export YTC_MODEL=ollama:qwen2.5:14b
+# The model names below are just defaults: use any model your account or
+# local server offers. Add a provider by copying an entry. type "openai" works
+# with ANY server that speaks the OpenAI-compatible /chat/completions API.
+ai:
+  default: claude
+  providers:
+    claude:
+      type: anthropic
+      model: claude-opus-5
+      key_env: ANTHROPIC_API_KEY      # or `ant auth login`
+    openai:
+      type: openai
+      base_url: https://api.openai.com/v1
+      model: gpt-5
+      key_env: OPENAI_API_KEY
+      json_mode: true
+      max_tokens_param: max_completion_tokens
+    gemini:
+      type: openai
+      base_url: https://generativelanguage.googleapis.com/v1beta/openai
+      model: gemini-2.5-flash
+      key_env: GEMINI_API_KEY
+    openrouter:                       # one key, hundreds of models
+      type: openai
+      base_url: https://openrouter.ai/api/v1
+      model: openrouter/auto
+      key_env: OPENROUTER_API_KEY
+    ollama:                           # free + fully local: https://ollama.com
+      type: openai
+      base_url: http://localhost:11434/v1
+      model: llama3.2
+      json_mode: true
+    lmstudio:                         # free + fully local: https://lmstudio.ai
+      type: openai
+      base_url: http://localhost:1234/v1
+      model: local-model              # use the model id LM Studio shows

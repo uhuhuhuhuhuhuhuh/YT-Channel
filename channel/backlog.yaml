@@ -1,0 +1,63 @@
+# Wonder Bites idea backlog.
+# status: idea → scripted → rendered → published
+# Pick from the top of each pillar; move winners' sequels up (see strategy.md §6).
+# Every hook below still needs its sources opened and checked before scripting.
+
+animals:
+  - {topic: "Octopuses have three hearts and blue blood", status: scripted, episode: 001}
+  - {topic: "Sea otters hold hands while they sleep", status: scripted, episode: 003}
+  - {topic: "Butterflies taste with their feet", status: scripted, episode: 005}
+  - {topic: "A blue whale's tongue weighs as much as an elephant", status: scripted, episode: 008}
+  - {topic: "Cows have best friends and get less stressed together", status: idea}
+  - {topic: "A snail can sleep for up to three years (in dry weather)", status: idea}
+  - {topic: "Flamingos are pink because of what they eat", status: idea}
+  - {topic: "Owls can't move their eyes, so they turn their heads", status: idea}
+  - {topic: "Koalas sleep up to 20 hours a day", status: idea}
+  - {topic: "Wombat poop is cube-shaped", status: idea}
+  - {topic: "Honeybees dance to tell each other where flowers are", status: idea}
+  - {topic: "Sloths can hold their breath longer than dolphins", status: idea}
+  - {topic: "A group of flamingos is called a flamboyance", status: idea}
+  - {topic: "Penguins give pebbles to other penguins", status: idea}
+  - {topic: "Crows can recognise human faces", status: idea}
+  - {topic: "Elephants use their trunks like a snorkel", status: idea}
+
+space:
+  - {topic: "A day on Venus is longer than its year", status: scripted, episode: 002}
+  - {topic: "Saturn would float in a (giant) bathtub", status: idea}
+  - {topic: "Footprints on the Moon can last millions of years", status: idea}
+  - {topic: "The Sun is a star, and it's medium-sized", status: idea}
+  - {topic: "It rains diamonds on Neptune (probably!)", status: idea}
+  - {topic: "Olympus Mons is about 2.5 times taller than Everest", status: idea}
+  - {topic: "Sunsets on Mars are blue", status: idea}
+  - {topic: "Astronauts grow taller in space", status: idea}
+  - {topic: "You could fit about 1.3 million Earths inside the Sun", status: idea}
+
+body:
+  - {topic: "You're a little taller in the morning", status: scripted, episode: 004}
+  - {topic: "Why we get goosebumps", status: idea}
+  - {topic: "Your nose can remember lots and lots of smells", status: idea}
+  - {topic: "Babies have more bones than grown-ups", status: idea}
+  - {topic: "Your stomach makes a new lining every few days", status: idea}
+  - {topic: "Why yawns are contagious (scientists are still figuring it out!)", status: idea}
+
+earth_and_science:
+  - {topic: "Honey never spoils", status: scripted, episode: 006}
+  - {topic: "Bananas are berries but strawberries aren't", status: scripted, episode: 007}
+  - {topic: "Lightning is hotter than the surface of the Sun", status: idea}
+  - {topic: "Some trees talk through underground fungus networks", status: idea}
+  - {topic: "Antarctica is the biggest desert on Earth", status: idea}
+  - {topic: "Water can boil and freeze at the same time (triple point)", status: idea}
+  - {topic: "Rainbows are really full circles", status: idea}
+
+spooky_bites:
+  - {topic: "Creepy-but-true: mushrooms that glow in the dark", status: scripted, episode: 009}
+  - {topic: "Story: The Tap-Tap-Tap in the Attic", status: scripted, episode: 010}
+  - {topic: "Creepy-but-true: the anglerfish and its glowing lantern", status: scripted, episode: 011}
+  - {topic: "Story (long): The Lighthouse Ghost Who Was Afraid of the Dark", status: scripted, episode: 012}
+  - {topic: "Creepy-but-true: 'zombie' snails and their disco eye-stalks (gently!)", status: idea}
+  - {topic: "Creepy-but-true: why bats hang upside down", status: idea}
+  - {topic: "Creepy-but-true: the ghost shark (chimaera) of the deep", status: idea}
+  - {topic: "Creepy-but-true: spiders that 'fly' on silk balloons", status: idea}
+  - {topic: "Story: The Pumpkin That Wouldn't Stop Growing", status: idea}
+  - {topic: "Story: The Scarecrow Who Was Scared of Crows", status: idea}
+  - {topic: "Story: Grandma's Whispering Wardrobe (it's the wind… and a mouse)", status: idea}
