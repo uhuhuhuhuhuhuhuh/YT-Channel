@@ -1,0 +1,70 @@
+title: "The Tap-Tap-Tap at the Window 👻 Spooky Bites Story #shorts"
+series: spooky
+format: short
+bg: night
+bg_params: {house: true}
+description: |
+  👻 Spooky Bites story time!
+  Every night, Maya hears a tap-tap-tap at her window. Her brother says it's the
+  Window Ghost… but what is it REALLY? A gentle spooky story with a sweet surprise. 🦉
+
+  🌟 Wonder Bites: bite-sized facts for curious kids. Spooky Bites every Friday!
+tags: [spooky stories for kids, bedtime story, not scary story for kids, ghost story for kids, halloween story for kids, spooky bites, wonder bites]
+thumbnail:
+  text: "WHO'S TAPPING?!"
+  sprites: [ghost, owl]
+  bg: night
+
+segments:
+  - say: Every night at bedtime, Maya heard it. Tap. Tap. Tap.
+    headline: "TAP TAP TAP"
+    sprites:
+      - {name: girl, x: 0.5, y: 0.47, size: 0.34, motion: shake}
+
+  - say: It came from her window. The curtains swayed.
+    headline: "THE WINDOW"
+    sprites:
+      - {name: window, x: 0.5, y: 0.45, size: 0.42, motion: wiggle}
+
+  - say: It's the Window Ghost, whispered her big brother.
+    headline: "THE WINDOW GHOST?!"
+    sprites:
+      - {name: ghost, x: 0.5, y: 0.45, size: 0.36, motion: peek, enter: none}
+
+  - say: Maya pulled her blanket up to her nose.
+    headline: "GULP"
+    sprites:
+      - {name: girl, x: 0.5, y: 0.47, size: 0.34, motion: shake}
+      - {name: bed, x: 0.5, y: 0.58, size: 0.44, motion: none}
+
+  - say: Then she took a deep breath, grabbed her flashlight, and opened the curtain.
+    headline: "BE BRAVE"
+    sprites:
+      - {name: girl, x: 0.36, y: 0.47, size: 0.32, motion: float}
+      - {name: flashlight, x: 0.66, y: 0.42, size: 0.2, motion: wiggle, delay: 0.8}
+
+  - say: It was a tree branch, tapping on the glass in the wind.
+    headline: "A BRANCH!"
+    sprites:
+      - {name: leaf fluttering in wind, x: 0.5, y: 0.45, size: 0.4, motion: sway}
+
+  - say: And on the branch sat a fluffy little owl, blinking its big round eyes.
+    headline: "HOO'S THERE?"
+    sprites:
+      - {name: leaf fluttering in wind, x: 0.5, y: 0.45, size: 0.4, motion: sway}
+      - {name: owl, x: 0.5, y: 0.38, size: 0.26, motion: bounce, delay: 0.3}
+
+  - say: Maya giggled. You're not a ghost! Hoo, said the owl.
+    headline: "HOO HOO!"
+    sprites:
+      - {name: girl, x: 0.32, y: 0.47, size: 0.3, motion: bounce}
+      - {name: owl, x: 0.7, y: 0.42, size: 0.26, motion: wiggle}
+
+  - say: Sweet dreams, and see you next Spooky Bites!
+    headline: "SWEET DREAMS"
+    sprites:
+      - {name: owl, x: 0.5, y: 0.45, size: 0.32, motion: float}
+      - {name: crescent moon, x: 0.8, y: 0.3, size: 0.13, motion: float, delay: 0.5}
+
+sources:
+  - "Original story by Wonder Bites. (Fun real fact: owls can't move their eyes, so they turn their heads instead.)"

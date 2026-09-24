@@ -1,0 +1,70 @@
+# Wonder Bites: channel-wide settings used by the `ytc` toolkit.
+# Paths are relative to the repo root.
+
+channel:
+  name: Wonder Bites
+  handle: "@WonderBitesKids"
+  tagline: Bite-sized facts for curious kids.
+  made_for_kids: true          # sets status.selfDeclaredMadeForKids on upload
+  default_language: en
+  category_id: "27"            # 27 = Education
+
+render:
+  fps: 30
+  short: {width: 1080, height: 1920}
+  long: {width: 1920, height: 1080}
+  crf: 20
+  preset: medium
+  lead_in: 0.35                # seconds of picture before the first word
+  tail: 1.0                    # seconds after the last word
+  transition: 0.3              # background crossfade length
+  watermark: true
+
+# Voices are Piper models (https://github.com/rhasspy/piper). Both below are
+# trained on public-domain LibriVox recordings, so they are safe for a
+# monetised channel. Download them with `ytc voices download`.
+voices:
+  kristin:
+    engine: piper
+    model: voices/en_US-kristin-medium.onnx
+    length_scale: 1.06         # >1 = slower. Kids' content should breathe.
+  norman:
+    engine: piper
+    model: voices/en_US-norman-medium.onnx
+    length_scale: 1.12
+  # Optional online voice (needs network + `pip install edge-tts`). Check the
+  # service's terms yourself before using it on a monetised channel.
+  andrew-edge:
+    engine: edge
+    voice: en-US-AndrewNeural
+    rate: "-5%"
+
+series:
+  facts:
+    voice: kristin
+    music: playful
+    accent: "#FFD23F"
+  spooky:
+    voice: norman
+    music: spooky
+    accent: "#9BE564"
+
+audio:
+  sample_rate: 44100
+  sentence_pause: 0.28         # silence between sentences
+  segment_pause: 0.35          # silence after each segment
+  music_volume: 0.16           # relative to narration
+  duck: 0.55                   # music is multiplied by this while the narrator speaks
+  sfx_volume: 0.35
+  loudness_lufs: -14           # YouTube's reference loudness
+
+palette:
+  sunshine: "#FFD23F"
+  bubblegum: "#FF5DA2"
+  sky: "#3EC1F3"
+  grape: "#7B4DFF"
+  mint: "#3DDC97"
+  ink: "#2B2140"
+  white: "#FFFFFF"
+  slime: "#9BE564"
+  pumpkin: "#FF9F1C"

@@ -1,0 +1,77 @@
+title: "An Octopus Has THREE Hearts?! 🐙 #shorts"
+series: facts
+format: short
+bg: ocean
+description: |
+  An octopus has three hearts AND blue blood! 🐙💙
+  Learn why, and what happens to one of those hearts when an octopus swims.
+
+  🧠 Wonder Bites: bite-sized facts for curious kids.
+  A new fun fact every weekday!
+tags: [octopus, octopus facts, animal facts for kids, ocean animals, fun facts for kids, science for kids, kids learning, wonder bites]
+thumbnail:
+  text: "3 HEARTS?!"
+  sprite: octopus
+  bg: ocean
+
+segments:
+  - say: Did you know an octopus has three hearts?
+    headline: "3 HEARTS?!"
+    sprites:
+      - {name: octopus, x: 0.5, y: 0.45, size: 0.55, motion: bounce}
+
+  - say: Yep! Three! Two small hearts pump blood through its gills, where it breathes.
+    headline: "2 FOR THE GILLS"
+    sprites:
+      - {name: octopus, x: 0.5, y: 0.5, size: 0.42, motion: float}
+      - {name: red heart, x: 0.26, y: 0.33, size: 0.16, motion: pulse, delay: 0.8}
+      - {name: red heart, x: 0.74, y: 0.33, size: 0.16, motion: pulse, delay: 1.1}
+
+  - say: And one big heart pumps blood to the rest of its body.
+    headline: "1 FOR THE BODY"
+    sprites:
+      - {name: octopus, x: 0.5, y: 0.5, size: 0.42, motion: float}
+      - {name: red heart, x: 0.26, y: 0.33, size: 0.16, motion: pulse, delay: 0.8}
+      - {name: red heart, x: 0.74, y: 0.33, size: 0.16, motion: pulse, delay: 1.1}
+      - {name: red heart, x: 0.5, y: 0.3, size: 0.22, motion: pulse, delay: 0.4}
+
+  - say: Here's the weird part. Octopus blood is blue!
+    headline: "BLUE BLOOD!"
+    sprites:
+      - {name: octopus, x: 0.5, y: 0.48, size: 0.5, motion: wiggle}
+      - {name: blue heart, x: 0.78, y: 0.3, size: 0.18, motion: pulse, delay: 0.5}
+
+  - say: It uses copper to carry oxygen, instead of iron like we do. Copper makes it blue.
+    headline: "COPPER = BLUE"
+    sprites:
+      - {name: octopus, x: 0.5, y: 0.48, size: 0.5, motion: wiggle}
+      - {name: blue heart, x: 0.78, y: 0.3, size: 0.18, motion: pulse}
+      - {name: test tube, x: 0.22, y: 0.3, size: 0.16, motion: float, delay: 0.6}
+
+  - say: And when an octopus swims, its big body heart stops beating. That tires it out, so octopuses would rather crawl!
+    headline: "CRAWL > SWIM"
+    sprites:
+      - {name: octopus, x: 0.2, y: 0.52, size: 0.34, motion: walk, to: [0.8, 0.52], shadow: true}
+
+  - say: Quick quiz! How many hearts does an octopus have? Say it out loud!
+    headline: "QUIZ TIME!"
+    bg: party
+    bg_params: {scheme: sky}
+    sprites:
+      - {name: octopus, x: 0.5, y: 0.47, size: 0.45, motion: bounce}
+      - {name: red question mark, x: 0.8, y: 0.3, size: 0.16, motion: wiggle, delay: 0.5}
+    pause: 1.2
+
+  - say: Three! You got it! See you next time on Wonder Bites!
+    headline: "THREE!"
+    bg: party
+    bg_params: {scheme: sky}
+    sprites:
+      - {name: octopus, x: 0.5, y: 0.47, size: 0.45, motion: bounce}
+      - {name: party popper, x: 0.2, y: 0.3, size: 0.18, motion: wiggle, delay: 0.3}
+      - {name: party popper, x: 0.8, y: 0.3, size: 0.18, motion: wiggle, delay: 0.5, flip: true}
+
+sources:
+  - "Smithsonian Ocean: Octopus: https://ocean.si.edu/ocean-life/invertebrates/octopus"
+  - "Smithsonian Magazine, 'Ten Curious Facts About Octopuses': https://www.smithsonianmag.com/science-nature/ten-curious-facts-about-octopuses-7625828/"
+  - "Monterey Bay Aquarium: Giant Pacific octopus: https://www.montereybayaquarium.org/animals/animals-a-to-z/giant-pacific-octopus"

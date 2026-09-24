@@ -1,0 +1,72 @@
+title: "A Whale Tongue as Heavy as an ELEPHANT?! 🐋 #shorts"
+series: facts
+format: short
+bg: ocean
+description: |
+  The blue whale is the biggest animal that has ever lived, and its tongue alone
+  can weigh as much as an elephant! 🐋🐘
+
+  🌟 Wonder Bites: bite-sized facts for curious kids. A new fun fact every weekday!
+tags: [blue whale, blue whale facts, whales for kids, biggest animal, ocean animals for kids, fun facts for kids, wonder bites]
+thumbnail:
+  text: "TONGUE = ELEPHANT?!"
+  sprites: [spouting whale, elephant]
+  bg: ocean
+
+segments:
+  - say: The blue whale is the biggest animal that has ever lived. Even bigger than the dinosaurs!
+    headline: "BIGGEST EVER!"
+    sprites:
+      - {name: spouting whale, x: 0.5, y: 0.45, size: 0.56, motion: float}
+
+  - say: It can grow up to about thirty meters long. That's longer than two school buses in a row!
+    headline: "2+ SCHOOL BUSES"
+    sprites:
+      - {name: whale, x: 0.5, y: 0.36, size: 0.6, motion: float}
+      - {name: bus, x: 0.3, y: 0.58, size: 0.24, motion: pop, delay: 0.8}
+      - {name: bus, x: 0.62, y: 0.58, size: 0.24, motion: pop, delay: 1.1}
+
+  - say: Its tongue alone can weigh as much as an elephant!
+    headline: "ELEPHANT TONGUE!"
+    sprites:
+      - {name: tongue, x: 0.3, y: 0.46, size: 0.28, motion: wiggle}
+      - {name: elephant, x: 0.7, y: 0.46, size: 0.34, motion: bounce, delay: 0.5}
+
+  - say: But blue whales eat some of the tiniest food in the sea. Little shrimp-like animals called krill.
+    headline: "TINY SNACKS"
+    sprites:
+      - {name: spouting whale, x: 0.4, y: 0.45, size: 0.44, motion: float}
+      - {name: shrimp, x: 0.78, y: 0.4, size: 0.1, motion: float, delay: 0.5}
+      - {name: shrimp, x: 0.84, y: 0.5, size: 0.08, motion: float, delay: 0.7}
+
+  - say: Gulp after gulp, one blue whale can eat about four tons of krill in a single day!
+    headline: "4 TONS A DAY"
+    sprites:
+      - {name: whale, x: 0.5, y: 0.45, size: 0.56, motion: pulse}
+
+  - say: Blue whales are also among the loudest animals on the planet. Their deep calls travel far through the ocean.
+    headline: "SUPER LOUD"
+    sprites:
+      - {name: spouting whale, x: 0.5, y: 0.47, size: 0.46, motion: float}
+      - {name: musical notes, x: 0.78, y: 0.3, size: 0.14, motion: float, delay: 0.6}
+
+  - say: Quick quiz! What tiny food do blue whales eat? Say it out loud!
+    headline: "QUIZ TIME!"
+    bg: party
+    bg_params: {scheme: sky}
+    sprites:
+      - {name: spouting whale, x: 0.5, y: 0.46, size: 0.44, motion: bounce}
+      - {name: red question mark, x: 0.82, y: 0.3, size: 0.15, motion: wiggle, delay: 0.5}
+    pause: 1.2
+
+  - say: Krill! Big whale, teeny snack. See you next time on Wonder Bites!
+    headline: "KRILL!"
+    bg: party
+    bg_params: {scheme: sky}
+    sprites:
+      - {name: spouting whale, x: 0.5, y: 0.46, size: 0.44, motion: bounce}
+      - {name: bitsy_wink, x: 0.18, y: 0.3, size: 0.2, motion: wiggle, delay: 0.3}
+
+sources:
+  - "NOAA Fisheries, Blue Whale: https://www.fisheries.noaa.gov/species/blue-whale"
+  - "National Geographic, Blue Whale: https://www.nationalgeographic.com/animals/mammals/facts/blue-whale"

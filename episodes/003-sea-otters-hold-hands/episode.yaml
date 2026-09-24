@@ -1,0 +1,77 @@
+title: "Sea Otters Hold Hands?! 🦦 #shorts"
+series: facts
+format: short
+bg: ocean
+description: |
+  Some sea otters hold paws while they float, so they don't drift apart! 🦦💙
+  Plus: the secret pocket where an otter keeps its favorite rock.
+
+  🌟 Wonder Bites: bite-sized facts for curious kids. A new fun fact every weekday!
+tags: [sea otter, sea otter facts, otters holding hands, animal facts for kids, ocean animals for kids, fun facts for kids, wonder bites]
+thumbnail:
+  text: "HOLDING HANDS?!"
+  sprites: [otter, red heart]
+  bg: ocean
+
+segments:
+  - say: Did you know some sea otters hold hands?
+    headline: "HOLDING HANDS!"
+    sprites:
+      - {name: otter, x: 0.32, y: 0.45, size: 0.38, motion: float}
+      - {name: otter, x: 0.68, y: 0.45, size: 0.38, motion: float, flip: true}
+      - {name: red heart, x: 0.5, y: 0.3, size: 0.13, motion: pulse, delay: 0.8}
+
+  - say: Sea otters float on their backs in the ocean, even when they nap.
+    headline: "FLOATING NAPS"
+    sprites:
+      - {name: otter, x: 0.5, y: 0.45, size: 0.44, motion: float, rotate: 12}
+      - {name: zzz, x: 0.75, y: 0.3, size: 0.14, motion: float, delay: 0.6}
+
+  - say: A group of floating otters is called a raft. Holding paws helps them stay together, and keeps their paws warm.
+    headline: "A RAFT!"
+    sprites:
+      - {name: otter, x: 0.22, y: 0.47, size: 0.28, motion: float}
+      - {name: otter, x: 0.5, y: 0.42, size: 0.28, motion: float, delay: 0.3}
+      - {name: otter, x: 0.78, y: 0.47, size: 0.28, motion: float, delay: 0.6, flip: true}
+
+  - say: Otters also wrap themselves in long seaweed called kelp, like a cozy blanket.
+    headline: "KELP BLANKET"
+    sprites:
+      - {name: otter, x: 0.5, y: 0.45, size: 0.4, motion: float}
+      - {name: herb, x: 0.3, y: 0.52, size: 0.2, motion: sway, delay: 0.4}
+      - {name: herb, x: 0.7, y: 0.52, size: 0.2, motion: sway, delay: 0.6, flip: true}
+
+  - say: And here's a secret. Sea otters have a pocket! It's a flap of loose skin under each arm.
+    headline: "SECRET POCKET"
+    sprites:
+      - {name: otter, x: 0.5, y: 0.45, size: 0.44, motion: wiggle}
+      - {name: magnifying glass tilted left, x: 0.78, y: 0.32, size: 0.16, motion: float, delay: 0.5}
+
+  - say: They keep snacks in it, and sometimes a favorite rock for cracking open shells!
+    headline: "FAVORITE ROCK"
+    sprites:
+      - {name: otter, x: 0.5, y: 0.45, size: 0.4, motion: float}
+      - {name: rock, x: 0.24, y: 0.34, size: 0.16, motion: pop, delay: 0.3}
+      - {name: crab, x: 0.76, y: 0.34, size: 0.16, motion: wiggle, delay: 0.7}
+
+  - say: Quick quiz! What's a group of floating sea otters called? Say it out loud!
+    headline: "QUIZ TIME!"
+    bg: party
+    bg_params: {scheme: mint}
+    sprites:
+      - {name: otter, x: 0.5, y: 0.46, size: 0.44, motion: bounce}
+      - {name: red question mark, x: 0.82, y: 0.3, size: 0.15, motion: wiggle, delay: 0.5}
+    pause: 1.2
+
+  - say: A raft! Just like a floating otter boat. See you next time on Wonder Bites!
+    headline: "A RAFT!"
+    bg: party
+    bg_params: {scheme: mint}
+    sprites:
+      - {name: otter, x: 0.5, y: 0.46, size: 0.44, motion: bounce}
+      - {name: party popper, x: 0.2, y: 0.3, size: 0.17, motion: wiggle, delay: 0.3}
+
+sources:
+  - "NOAA Ocean Today, Sea Otter Anatomy: https://oceantoday.noaa.gov/seaotteranatomy/"
+  - "Center for Biological Diversity, Sea otter: https://www.biologicaldiversity.org/species/mammals/sea_otter/index.html"
+  - "Monterey Bay Aquarium, Sea otter: https://www.montereybayaquarium.org/animals-the-ocean/animals-a-to-z/sea-otter"

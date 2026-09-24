@@ -1,0 +1,72 @@
+title: "Butterflies Taste With Their FEET?! 🦋 #shorts"
+series: facts
+format: short
+bg: meadow
+description: |
+  Butterflies can taste a leaf just by standing on it! 🦋👣
+  Learn how butterfly feet work, and the curly "straw" butterflies drink with.
+
+  🌟 Wonder Bites: bite-sized facts for curious kids. A new fun fact every weekday!
+tags: [butterfly, butterfly facts, insects for kids, animal facts for kids, fun facts for kids, science for kids, wonder bites]
+thumbnail:
+  text: "TASTE WITH FEET?!"
+  sprites: [butterfly, footprints]
+  bg: meadow
+
+segments:
+  - say: Butterflies taste with their feet!
+    headline: "FOOT TASTING?!"
+    sprites:
+      - {name: butterfly, x: 0.5, y: 0.45, size: 0.46, motion: float}
+
+  - say: Butterflies have tiny taste sensors on their feet.
+    headline: "TASTY FEET"
+    sprites:
+      - {name: butterfly, x: 0.5, y: 0.42, size: 0.4, motion: float}
+      - {name: footprints, x: 0.5, y: 0.62, size: 0.18, motion: pop, delay: 0.5}
+
+  - say: So when a butterfly lands on a leaf, it can taste it just by standing on it!
+    headline: "STEP AND TASTE"
+    sprites:
+      - {name: leaf fluttering in wind, x: 0.5, y: 0.52, size: 0.42, motion: sway}
+      - {name: butterfly, x: 0.5, y: 0.38, size: 0.26, motion: peek, enter: none, delay: 0.3}
+
+  - say: A mother butterfly drums her feet on a leaf, tasting it, to find the right plant for her eggs.
+    headline: "DRUM DRUM DRUM"
+    sprites:
+      - {name: butterfly, x: 0.5, y: 0.4, size: 0.34, motion: shake}
+      - {name: leaf fluttering in wind, x: 0.5, y: 0.55, size: 0.4, motion: sway}
+
+  - say: That way, when the baby caterpillars hatch, their favorite food is right there!
+    headline: "LUNCH IS READY"
+    sprites:
+      - {name: bug, x: 0.5, y: 0.47, size: 0.38, motion: walk, to: [0.62, 0.47]}
+      - {name: herb, x: 0.24, y: 0.5, size: 0.2, motion: sway}
+
+  - say: And to drink flower nectar, butterflies use a long tube, like a curly straw. It's called a proboscis.
+    headline: "CURLY STRAW"
+    sprites:
+      - {name: hibiscus, x: 0.35, y: 0.5, size: 0.3, motion: sway}
+      - {name: butterfly, x: 0.66, y: 0.38, size: 0.28, motion: float, delay: 0.3}
+      - {name: cup with straw, x: 0.78, y: 0.58, size: 0.14, motion: pop, delay: 1.2}
+
+  - say: Quick quiz! What do butterflies taste with? Say it out loud!
+    headline: "QUIZ TIME!"
+    bg: party
+    bg_params: {scheme: grape}
+    sprites:
+      - {name: butterfly, x: 0.5, y: 0.46, size: 0.42, motion: bounce}
+      - {name: red question mark, x: 0.82, y: 0.3, size: 0.15, motion: wiggle, delay: 0.5}
+    pause: 1.2
+
+  - say: Their feet! Imagine tasting your lunch with your toes! See you next time on Wonder Bites!
+    headline: "THEIR FEET!"
+    bg: party
+    bg_params: {scheme: grape}
+    sprites:
+      - {name: bitsy_wink, x: 0.5, y: 0.46, size: 0.42, motion: bounce}
+      - {name: face with tongue, x: 0.2, y: 0.3, size: 0.16, motion: wiggle, delay: 0.4}
+
+sources:
+  - "Carleton University Biology, 'Do butterflies really taste through their feet?': https://carleton.ca/biology/cu-faq/do-butterflies-really-taste-through-their-feet/"
+  - "Minnich, D. E. (1922). 'The chemical sensitivity of the tarsi of the red admiral butterfly', Journal of Experimental Zoology 35(1)"

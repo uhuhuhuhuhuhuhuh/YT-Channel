@@ -1,0 +1,74 @@
+title: "Honey Can Last THOUSANDS of Years?! 🍯 #shorts"
+series: facts
+format: short
+bg: meadow
+description: |
+  Honey found in ancient Egyptian tombs, thousands of years old, was still preserved! 🍯🐝
+  Discover the three secrets that keep germs out of honey.
+
+  🌟 Wonder Bites: bite-sized facts for curious kids. A new fun fact every weekday!
+tags: [honey, honey facts, bees for kids, honeybee, science for kids, fun facts for kids, ancient egypt for kids, wonder bites]
+thumbnail:
+  text: "1000s OF YEARS OLD!"
+  sprites: [honey pot, honeybee]
+  bg: meadow
+
+segments:
+  - say: Honey can last for thousands of years without going bad!
+    headline: "1000s OF YEARS!"
+    sprites:
+      - {name: honey pot, x: 0.5, y: 0.46, size: 0.42, motion: bounce}
+      - {name: honeybee, x: 0.78, y: 0.3, size: 0.15, motion: float, delay: 0.4}
+
+  - say: Explorers found pots of honey in ancient Egyptian tombs. Thousands of years old, and still preserved!
+    headline: "ANCIENT HONEY"
+    bg: desert
+    sprites:
+      - {name: honey pot, x: 0.5, y: 0.5, size: 0.36, motion: peek, enter: none}
+      - {name: hourglass done, x: 0.8, y: 0.3, size: 0.14, motion: wiggle, delay: 0.8}
+
+  - say: How? Secret number one. Honey has very little water, and germs need water to grow.
+    headline: "1: HARDLY ANY WATER"
+    sprites:
+      - {name: droplet, x: 0.35, y: 0.46, size: 0.2, motion: shake}
+      - {name: honey pot, x: 0.66, y: 0.47, size: 0.3, motion: float}
+
+  - say: Secret number two. Honey is a little bit sour, or acidic, and germs don't like that.
+    headline: "2: A BIT ACIDIC"
+    sprites:
+      - {name: lemon, x: 0.35, y: 0.46, size: 0.22, motion: wiggle}
+      - {name: honey pot, x: 0.66, y: 0.47, size: 0.3, motion: float}
+
+  - say: Secret number three. Bees add a special helper from their bodies that keeps germs away.
+    headline: "3: BEE POWER"
+    sprites:
+      - {name: honeybee, x: 0.35, y: 0.44, size: 0.26, motion: float}
+      - {name: honey pot, x: 0.66, y: 0.47, size: 0.3, motion: float}
+      - {name: shield, x: 0.5, y: 0.28, size: 0.14, motion: pop, delay: 0.8}
+
+  - say: And bees work hard for it. One bee makes only about a twelfth of a teaspoon of honey in its whole life!
+    headline: "1/12 TEASPOON"
+    sprites:
+      - {name: honeybee, x: 0.3, y: 0.45, size: 0.24, motion: float}
+      - {name: spoon, x: 0.66, y: 0.46, size: 0.3, motion: sway, delay: 0.4}
+
+  - say: Quick quiz! What does honey have very little of, that germs need? Say it out loud!
+    headline: "QUIZ TIME!"
+    bg: party
+    bg_params: {scheme: sunset}
+    sprites:
+      - {name: honeybee, x: 0.5, y: 0.46, size: 0.4, motion: bounce}
+      - {name: red question mark, x: 0.82, y: 0.3, size: 0.15, motion: wiggle, delay: 0.5}
+    pause: 1.2
+
+  - say: Water! That's why honey lasts so long. See you next time on Wonder Bites!
+    headline: "WATER!"
+    bg: party
+    bg_params: {scheme: sunset}
+    sprites:
+      - {name: bitsy_wink, x: 0.5, y: 0.46, size: 0.42, motion: bounce}
+      - {name: honey pot, x: 0.2, y: 0.32, size: 0.16, motion: wiggle, delay: 0.3}
+
+sources:
+  - "Smithsonian Magazine, 'The Science Behind Honey's Eternal Shelf Life': https://www.smithsonianmag.com/science-nature/the-science-behind-honeys-eternal-shelf-life-1218690/"
+  - "Carolina Honeybees, 'How Much Honey Can a Single Bee Produce?': https://carolinahoneybees.com/how-much-honey-does-a-bee-make/"
