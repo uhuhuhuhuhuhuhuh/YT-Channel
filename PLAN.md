@@ -61,7 +61,7 @@ idea ──► script (YAML) ──► voice (Piper TTS, offline) ──► scen
 | Stage | Module | Tech | Cost |
 |---|---|---|---|
 | Idea backlog | `channel/backlog.yaml` | curated list | free |
-| Script drafting (optional) | `ytc/writer.py` | Claude API → episode YAML, then a human review | API key |
+| Script drafting (optional) | `ytc/writer.py`, `ytc/ai.py` | Any AI model (Claude, OpenAI, Gemini, OpenRouter, local Ollama/LM Studio) → episode YAML, then a human review | API key, or free for local models |
 | Voice | `ytc/tts.py` | **Piper** offline TTS. Public-domain voices `kristin` (facts) and `norman` (Spooky storyteller) | free |
 | Characters | `ytc/sprites.py` | Fluent Emoji 3D, cached in `assets/sprites/` | free (MIT) |
 | Backgrounds | `ytc/scenes.py` | numpy + Pillow procedural scenes (sunny, ocean, space, jungle, night…) | free |

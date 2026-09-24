@@ -47,7 +47,7 @@ A 45-second Short renders in about a minute on a 4-core laptop.
 ## Publishing workflow
 
 ```bash
-ytc draft "why do cats purr"         # optional: Claude writes a first draft (needs API key)
+ytc draft "why do cats purr"         # optional: an AI model writes a first draft (see "Using any AI model")
 # …edit episodes/NNN-*/episode.yaml and open every source to check the facts…
 ytc check 013                        # validates sprites, layout, length, sources
 ytc preview 013                      # quick look
@@ -139,6 +139,33 @@ segment **stays on screen**. It doesn't pop in again.
 | `snow`, `desert` | Falling snow / blowing sand | |
 | `plain` | Flat colour | `color: grape` |
 
+## Using any AI model
+
+`ytc draft` and `ytc ask` work with any model. Pick one with `-m provider[:model]`:
+
+```bash
+ytc models                                             # what's configured, which keys are set
+ytc ask "Is it true that goldfish have 3-second memories?" -m claude
+ytc ask "Fact-check every claim in this script" -e 003 -m openai:gpt-5 -m gemini   # compare two models
+ytc draft "why cats purr" -m ollama:llama3.2            # free, fully local
+export YTC_MODEL=openrouter:meta-llama/llama-3.3-70b-instruct   # change your default
+```
+
+| Provider | Needs |
+|---|---|
+| `claude` | `ANTHROPIC_API_KEY` (or `ant auth login`) and `pip install -e ".[draft]"` |
+| `openai` | `OPENAI_API_KEY` |
+| `gemini` | `GEMINI_API_KEY` |
+| `openrouter` | `OPENROUTER_API_KEY`: one key for hundreds of models |
+| `ollama` | [Ollama](https://ollama.com) running locally. Start it with `OLLAMA_CONTEXT_LENGTH=8192 ollama serve` (the drafting prompt needs more than the 4K default) |
+| `lmstudio` | [LM Studio](https://lmstudio.ai)'s local server |
+
+Any other service with an OpenAI-compatible `/chat/completions` API (Groq,
+Together, Mistral, DeepSeek, llama.cpp, vLLM…) can be added as a new entry under
+`ai.providers` in `config.yaml`, with no code changes. Small local models
+(under ~7B parameters) often invent facts, so use a strong model for drafting,
+and always fact-check before rendering.
+
 ## Commands
 
 | Command | Does |
@@ -153,7 +180,9 @@ segment **stays on screen**. It doesn't pop in again.
 | `ytc brand` | Regenerate avatar, banner, watermark, mascot |
 | `ytc voices download` | Fetch the Piper voices |
 | `ytc sprites fetch --all` | Pre-download every sprite used by episodes |
-| `ytc draft "<topic>" [--series spooky]` | Claude drafts a new episode (`pip install -e ".[draft]"`) |
+| `ytc draft "<topic>" [--series spooky] [-m MODEL]` | Any AI model drafts a new episode |
+| `ytc ask "<question>" [-m MODEL] [-e EP] [-g]` | Ask any AI model; attach an episode (`-e`) or the guidelines (`-g`); repeat `-m` to compare models |
+| `ytc models` | List configured AI providers and which are ready |
 | `ytc upload <ep> [--publish-at …]` | Upload through the YouTube Data API (`pip install -e ".[upload]"`) |
 
 Channel-wide settings (voices, speed, music volume, fps, colours) are in

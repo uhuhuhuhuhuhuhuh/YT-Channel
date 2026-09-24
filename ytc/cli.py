@@ -3,9 +3,11 @@
 from __future__ import annotations
 
 import argparse
+import os
 import sys
 from pathlib import Path
 
+from .ai import AIError
 from .config import OUTPUT, load_config
 from .episode import Episode, EpisodeError, list_episodes, load_episode
 
@@ -161,10 +163,46 @@ def cmd_sprites(args):
             print(f"✘ {e}")
 
 
+ASK_SYSTEM = ("You are a helpful assistant for Wonder Bites, a faceless YouTube channel of short, "
+              "fact-checked videos for kids aged 6-12. Be accurate; say so when you are unsure.")
+
+
+def cmd_ask(args):
+    from . import ai
+
+    prompt = sys.stdin.read() if args.prompt == "-" else args.prompt
+    if args.episode:
+        ep = load_episode(args.episode)
+        yaml_text = (ep.path / "episode.yaml").read_text(encoding="utf-8")
+        prompt = f"{prompt}\n\nHere is the episode script ({ep.path.name}/episode.yaml):\n\n{yaml_text}"
+    if args.guidelines:
+        from .config import ROOT
+
+        rules = (ROOT / "channel" / "content-guidelines.md").read_text(encoding="utf-8")
+        prompt = f"{prompt}\n\nThe channel's content guidelines:\n\n{rules}"
+    for spec in args.model or [None]:
+        target = ai.resolve(spec)
+        if len(args.model or []) > 1:
+            print(f"\n━━━ {target} ━━━")
+        answer = ai.ask(prompt, system=args.system or ASK_SYSTEM, model=spec, max_tokens=args.max_tokens)
+        print(answer.strip())
+
+
+def cmd_models(args):
+    from . import ai
+
+    default = (load_config().get("ai") or {}).get("default")
+    env = os.environ.get("YTC_MODEL")
+    print(f"default: {env or default}" + ("  (from $YTC_MODEL)" if env else ""))
+    for name, model, note in ai.status():
+        print(f"  {name:11s} {model:28s} {note}")
+    print("\nUse --model provider[:model], e.g. --model openai:gpt-5 or --model ollama:llama3.2")
+
+
 def cmd_draft(args):
     from .writer import draft
 
-    path = draft(args.topic, args.series)
+    path = draft(args.topic, args.series, args.model)
     print(f"✔ draft written to {path}\n  Fact-check it, then: ytc check {Path(path).parent.name} && ytc preview {Path(path).parent.name}")
 
 
@@ -235,10 +273,26 @@ def main(argv=None):
     sp.add_argument("--all", action="store_true")
     sp.set_defaults(fn=cmd_sprites)
 
-    sp = sub.add_parser("draft", help="draft a new episode with Claude (needs ANTHROPIC_API_KEY)")
+    model_help = "provider[:model], e.g. claude, openai:gpt-5, ollama:llama3.2 (see `ytc models`)"
+
+    sp = sub.add_parser("draft", help="draft a new episode with any AI model")
     sp.add_argument("topic")
     sp.add_argument("--series", choices=list(load_config()["series"]), default="facts")
+    sp.add_argument("-m", "--model", help=model_help)
     sp.set_defaults(fn=cmd_draft)
+
+    sp = sub.add_parser("ask", help="ask any AI model a question (optionally about an episode)")
+    sp.add_argument("prompt", help='the question, or "-" to read it from stdin')
+    sp.add_argument("-m", "--model", action="append",
+                    help=model_help + ". Repeat to compare several models.")
+    sp.add_argument("-e", "--episode", help="attach this episode's script to the question")
+    sp.add_argument("-g", "--guidelines", action="store_true", help="attach channel/content-guidelines.md")
+    sp.add_argument("--system", help="replace the default system prompt")
+    sp.add_argument("--max-tokens", type=int, default=8000)
+    sp.set_defaults(fn=cmd_ask)
+
+    sp = sub.add_parser("models", help="list configured AI providers and whether they're ready")
+    sp.set_defaults(fn=cmd_models)
 
     sp = sub.add_parser("upload", help="upload a rendered episode to YouTube")
     sp.add_argument("episode")
@@ -251,7 +305,7 @@ def main(argv=None):
     args = p.parse_args(argv)
     try:
         args.fn(args)
-    except EpisodeError as e:
+    except (EpisodeError, AIError) as e:
         raise SystemExit(f"error: {e}")
 
 

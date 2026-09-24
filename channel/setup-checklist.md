@@ -61,7 +61,8 @@ cadence. Check Google's quota calculator for current per-call costs.
 
 ## C. Optional: AI script drafting
 
-- [ ] Get a Claude API key (console.anthropic.com), then run
-      `pip install -e ".[draft]"` and `export ANTHROPIC_API_KEY=...`.
-- [ ] `ytc draft "why do cats purr"` writes a draft episode. **Always fact-check
-      it** against the sources before rendering.
+- [ ] Pick a model: Claude, OpenAI, Gemini, OpenRouter, or a free local model
+      (Ollama / LM Studio). Set that provider's API key; see "Using any AI
+      model" in the README. `ytc models` shows what's ready.
+- [ ] `ytc draft "why do cats purr" -m <provider>` writes a draft episode.
+      **Always fact-check it** against the sources before rendering.
