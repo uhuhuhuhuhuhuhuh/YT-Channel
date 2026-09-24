@@ -72,6 +72,6 @@ segments:
       - {name: party popper, x: 0.8, y: 0.3, size: 0.18, motion: wiggle, delay: 0.5, flip: true}
 
 sources:
-  - "Smithsonian Ocean: Octopus: https://ocean.si.edu/ocean-life/invertebrates/octopus"
+  - "Smithsonian Ocean, Cephalopods: Octopus, Squid, Cuttlefish, and Nautilus: https://ocean.si.edu/ocean-life/invertebrates/octopuses-squids-and-relatives"
   - "Smithsonian Magazine, 'Ten Curious Facts About Octopuses': https://www.smithsonianmag.com/science-nature/ten-curious-facts-about-octopuses-7625828/"
-  - "Monterey Bay Aquarium: Giant Pacific octopus: https://www.montereybayaquarium.org/animals/animals-a-to-z/giant-pacific-octopus"
+  - "National Geographic, Octopus facts: https://www.nationalgeographic.com/animals/invertebrates/facts/octopus-facts"
