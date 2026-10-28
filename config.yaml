@@ -45,6 +45,13 @@ voices:
     voice: en-US-AndrewNeural
     rate: "-5%"
 
+# How the Kokoro voice should say words its pronunciation engine gets wrong.
+# Values are IPA in Kokoro's symbol set. To check a word, run:
+#   ytc say "Octopuses are clever" --phonemes
+# then copy and correct the symbols for the word that sounds off.
+pronunciations:
+  octopuses: "ˈɑːktəpəsᵻz"        # was "OCK-tuh-PYOO-siz"
+
 series:
   facts:
     voice: kristin

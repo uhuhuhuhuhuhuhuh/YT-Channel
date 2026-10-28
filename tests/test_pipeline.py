@@ -139,3 +139,17 @@ def test_check_flags_emoji_headline():
     ep = load_episode("001")
     ep.segments[0].headline = "YAY 🎉"
     assert any("can't draw" in p for p in check_episode(ep, with_voice=False))
+
+
+def test_pronunciation_lexicon_replaces_only_listed_words():
+    fake = lambda chunk: "/" + chunk.strip().lower() + "/"   # stands in for the real phonemizer
+    lex = {"octopuses": "OK-TUH-PUH-SIZ"}
+    out = tts.kokoro_phonemes(fake, "Octopuses can swim, but octopuses crawl.", lex)
+    assert out == "OK-TUH-PUH-SIZ /can swim, but/ OK-TUH-PUH-SIZ /crawl./"
+    assert tts.kokoro_phonemes(fake, "I love octopuses!", lex) == "/i love/ OK-TUH-PUH-SIZ!"
+    assert tts.kokoro_phonemes(fake, "No match here.", lex) == "/no match here./"
+    assert "octopus" in tts.kokoro_phonemes(fake, "One octopus.", lex)     # singular untouched
+
+
+def test_config_fixes_octopuses():
+    assert "octopuses" in tts.pronunciations()

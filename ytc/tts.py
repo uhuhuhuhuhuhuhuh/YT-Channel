@@ -125,9 +125,46 @@ def _kokoro(text: str, voice_cfg: dict, out: Path) -> None:
     key = str(folder)
     if key not in _KOKORO:
         _KOKORO[key] = Kokoro(str(model), str(voices))
-    samples, sr = _KOKORO[key].create(text, voice=voice_cfg["voice"], speed=voice_cfg.get("speed", 1.0),
-                                      lang=voice_cfg.get("lang", "en-us"))
+    k = _KOKORO[key]
+    lang = voice_cfg.get("lang", "en-us")
+    phonemes = kokoro_phonemes(lambda chunk: k.tokenizer.phonemize(chunk, lang), text, pronunciations())
+    samples, sr = k.create(phonemes, voice=voice_cfg["voice"], speed=voice_cfg.get("speed", 1.0), lang=lang,
+                           is_phonemes=True)
     audio.write_wav(out, np.asarray(samples, np.float32), sr)
+
+
+def pronunciations() -> dict[str, str]:
+    """config.yaml → pronunciations: {word: IPA}, lower-cased."""
+    return {str(w).lower(): str(ipa) for w, ipa in (load_config().get("pronunciations") or {}).items()}
+
+
+def kokoro_phonemes(phonemize, text: str, lexicon: dict[str, str]) -> str:
+    """Phonemize text, but use the lexicon's IPA for any word it lists.
+
+    The text is split around lexicon words; the pieces in between keep their
+    punctuation, so pauses and intonation are unchanged.
+    """
+    if not lexicon:
+        return phonemize(text)
+    pattern = re.compile(r"\b(" + "|".join(sorted(map(re.escape, lexicon), key=len, reverse=True)) + r")\b",
+                         re.IGNORECASE)
+    parts: list[str] = []
+    pos = 0
+    for m in pattern.finditer(text):
+        chunk = text[pos:m.start()]
+        if chunk.strip():
+            parts.append(phonemize(chunk).strip())
+        parts.append(lexicon[m.group(1).lower()])
+        pos = m.end()
+    tail = text[pos:]
+    if tail.strip():
+        parts.append(phonemize(tail).strip() if re.search(r"\w", tail) else tail.strip())
+    out = ""
+    for part in parts:
+        if out and not re.match(r"[.,!?;:…]", part):
+            out += " "
+        out += part
+    return out
 
 
 ENGINES = {"piper": _piper, "edge": _edge, "kokoro": _kokoro}
@@ -163,7 +200,8 @@ def synth_sentence(text: str, voice: str) -> np.ndarray:
     cfg = load_config()["voices"][voice]
     if cfg["engine"] == "piper":
         _load_piper(cfg)
-    digest = hashlib.sha1(repr((sorted(cfg.items()), text)).encode()).hexdigest()[:16]
+    lex = sorted(pronunciations().items()) if cfg["engine"] == "kokoro" else []
+    digest = hashlib.sha1(repr((sorted(cfg.items()), lex, text)).encode()).hexdigest()[:16]
     cache = BUILD / "cache" / "tts" / f"{voice}-{digest}.wav"
     if not cache.exists():
         cache.parent.mkdir(parents=True, exist_ok=True)

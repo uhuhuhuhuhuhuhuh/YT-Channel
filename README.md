@@ -39,6 +39,12 @@ ytc film olive --still 30            # one frame at 30 s → output/…png
 ytc film olive                       # full 1080p24 → output/film-olive-three-hearts.mp4 (+ .srt)
 ```
 
+**If the narrator says a word wrong,** add it to `pronunciations:` in
+`config.yaml`. Run `ytc say "Octopuses are clever" --phonemes` to see the
+symbols the voice reads, then copy and correct the ones for that word. For
+example, `octopuses` is listed there because the voice used to say
+"octo-PYOO-ses".
+
 A film is a folder in `films/`:
 
 | File | What it holds |
@@ -212,6 +218,7 @@ and always fact-check before rendering.
 | `ytc draft "<topic>" [--series spooky] [-m MODEL]` | Any AI model drafts a new episode |
 | `ytc ask "<question>" [-m MODEL] [-e EP] [-g]` | Ask any AI model; attach an episode (`-e`) or the guidelines (`-g`); repeat `-m` to compare models |
 | `ytc models` | List configured AI providers and which are ready |
+| `ytc say "<line>" [--phonemes]` | Speak a line with the film voice (→ `output/say.wav`) to check pronunciation |
 | `ytc films` | List films |
 | `ytc film <name> [--preview] [--still T] [--start S --end E]` | Render a film (or one frame, or a time range) |
 | `ytc upload <ep> [--publish-at …]` | Upload through the YouTube Data API (`pip install -e ".[upload]"`) |

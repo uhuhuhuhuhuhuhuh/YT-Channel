@@ -199,6 +199,25 @@ def cmd_models(args):
     print("\nUse --model provider[:model], e.g. --model openai:gpt-5 or --model ollama:llama3.2")
 
 
+def cmd_say(args):
+    from . import audio, tts
+
+    cfg = load_config()["voices"][args.voice]
+    if args.phonemes:
+        if cfg["engine"] != "kokoro":
+            raise SystemExit("--phonemes works with Kokoro voices (e.g. --voice heart)")
+        from kokoro_onnx import Kokoro
+
+        folder = tts.ROOT / cfg.get("model_dir", "voices/kokoro")
+        k = Kokoro(str(folder / "kokoro-v1.0.onnx"), str(folder / "voices-v1.0.bin"))
+        lang = cfg.get("lang", "en-us")
+        print(tts.kokoro_phonemes(lambda c: k.tokenizer.phonemize(c, lang), args.text, tts.pronunciations()))
+    out = Path(args.out or OUTPUT / "say.wav")
+    out.parent.mkdir(parents=True, exist_ok=True)
+    audio.write_wav(out, tts.speak(args.text, args.voice).audio)
+    print(f"✔ {out}  (play it to check pronunciation)")
+
+
 def cmd_film(args):
     from .film.core import film_still, render_film
 
@@ -310,6 +329,13 @@ def main(argv=None):
     sp.add_argument("--system", help="replace the default system prompt")
     sp.add_argument("--max-tokens", type=int, default=8000)
     sp.set_defaults(fn=cmd_ask)
+
+    sp = sub.add_parser("say", help="speak a line with a voice, to check pronunciation")
+    sp.add_argument("text")
+    sp.add_argument("-v", "--voice", default="heart", choices=list(load_config()["voices"]))
+    sp.add_argument("--phonemes", action="store_true", help="also print the IPA the voice will read")
+    sp.add_argument("-o", "--out")
+    sp.set_defaults(fn=cmd_say)
 
     sp = sub.add_parser("film", help="render a hand-directed film from films/<name>/")
     sp.add_argument("name")
