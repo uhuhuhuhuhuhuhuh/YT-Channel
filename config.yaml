@@ -32,6 +32,12 @@ voices:
     engine: piper
     model: voices/en_US-norman-medium.onnx
     length_scale: 1.12
+  # Kokoro-82M (Apache-2.0): far more natural than Piper; the voice for films.
+  heart:
+    engine: kokoro
+    voice: af_heart
+    speed: 0.9
+    lang: en-us
   # Optional online voice (needs network + `pip install edge-tts`). Check the
   # service's terms yourself before using it on a monetised channel.
   andrew-edge:

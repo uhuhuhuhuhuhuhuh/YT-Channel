@@ -199,6 +199,26 @@ def cmd_models(args):
     print("\nUse --model provider[:model], e.g. --model openai:gpt-5 or --model ollama:llama3.2")
 
 
+def cmd_film(args):
+    from .film.core import film_still, render_film
+
+    if args.still is not None:
+        out = OUTPUT / f"film-{args.name}-t{args.still:g}.png"
+        out.parent.mkdir(parents=True, exist_ok=True)
+        film_still(args.name, args.still).save(out)
+        print(f"✔ {out}")
+        return
+    render_film(args.name, preview=args.preview, workers=args.workers, start=args.start, end=args.end)
+
+
+def cmd_films(args):
+    from .film.core import list_films, load_film
+
+    for p in list_films():
+        spec = load_film(p.name)
+        print(f"  {p.name:28s} {spec.meta.get('title', '')}")
+
+
 def cmd_draft(args):
     from .writer import draft
 
@@ -290,6 +310,18 @@ def main(argv=None):
     sp.add_argument("--system", help="replace the default system prompt")
     sp.add_argument("--max-tokens", type=int, default=8000)
     sp.set_defaults(fn=cmd_ask)
+
+    sp = sub.add_parser("film", help="render a hand-directed film from films/<name>/")
+    sp.add_argument("name")
+    sp.add_argument("--preview", action="store_true", help="half size, 12 fps")
+    sp.add_argument("--still", type=float, help="render one frame at this time (seconds) as PNG")
+    sp.add_argument("--start", type=float, default=0.0, help="render from this time")
+    sp.add_argument("--end", type=float, help="render up to this time")
+    sp.add_argument("--workers", type=int)
+    sp.set_defaults(fn=cmd_film)
+
+    sp = sub.add_parser("films", help="list films")
+    sp.set_defaults(fn=cmd_films)
 
     sp = sub.add_parser("models", help="list configured AI providers and whether they're ready")
     sp.set_defaults(fn=cmd_models)

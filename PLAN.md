@@ -1,6 +1,12 @@
 # Channel Plan: **Wonder Bites**
 
-> *Bite-sized facts for curious kids.*
+> *Tiny films about big wonders.*
+
+> **Update: the format has been rethought.** The main product is now
+> hand-directed 1½–4 minute paper-cut films with a real character and story;
+> Shorts become trailers cut from them. Read **[RETHINK.md](RETHINK.md)** first.
+> The sections below describe the original Shorts-first plan, which still holds
+> for the brand, safety rules and publishing, and is kept for reference.
 
 ## 1. The concept
 

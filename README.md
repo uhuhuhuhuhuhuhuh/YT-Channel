@@ -24,7 +24,36 @@ free**:
 | [channel/setup-checklist.md](channel/setup-checklist.md) | Creating the channel and API credentials (human-only steps) |
 | [channel/backlog.yaml](channel/backlog.yaml) | 50 topic ideas |
 
-## Quick start
+## 🎬 Films (the main format)
+
+Wonder Bites now makes **tiny films**: 1½–4 minute stories in a paper-cut
+diorama style, with a character who acts, a natural narrator (Kokoro TTS) and
+sound designed to the picture. Why: see [RETHINK.md](RETHINK.md).
+
+```bash
+pip install -e ".[kokoro]"
+ytc voices download                  # Piper voices + the Kokoro model (~350 MB)
+ytc films                            # list films
+ytc film olive --preview             # half size, 12 fps, ~1 min to render
+ytc film olive --still 30            # one frame at 30 s → output/…png
+ytc film olive                       # full 1080p24 → output/film-olive-three-hearts.mp4 (+ .srt)
+```
+
+A film is a folder in `films/`:
+
+| File | What it holds |
+|---|---|
+| `film.yaml` | Title, description, tags, **sources**, voice, size, fps, music/ambience levels |
+| `screenplay.py` | `BEATS` (the narration), `build(stage)` (the world: layers, sprites, effects) and `direct(stage)` (camera moves, character actions, sound cues) |
+
+Direction is placed on the narrator's words, so it stays in sync whatever the
+voice: `stage.cue(11, "stops")` is the moment the narrator says "stops" in
+beat 11. The engine is in `ytc/film/`: `paper.py` (cut-paper look), `world.py`
+(depth layers, camera, keyframe tracks), `octopus.py` (the character), `reef.py`
+(underwater scenery), `fx.py` (rays, snow, bubbles, word cards) and `sound.py`
+(heartbeats, bubbles, score).
+
+## Quick start (the original Shorts pipeline)
 
 Needs Python 3.10+. ffmpeg is bundled through `imageio-ffmpeg`, so there's
 nothing else to install.
@@ -183,6 +212,8 @@ and always fact-check before rendering.
 | `ytc draft "<topic>" [--series spooky] [-m MODEL]` | Any AI model drafts a new episode |
 | `ytc ask "<question>" [-m MODEL] [-e EP] [-g]` | Ask any AI model; attach an episode (`-e`) or the guidelines (`-g`); repeat `-m` to compare models |
 | `ytc models` | List configured AI providers and which are ready |
+| `ytc films` | List films |
+| `ytc film <name> [--preview] [--still T] [--start S --end E]` | Render a film (or one frame, or a time range) |
 | `ytc upload <ep> [--publish-at …]` | Upload through the YouTube Data API (`pip install -e ".[upload]"`) |
 
 Channel-wide settings (voices, speed, music volume, fps, colours) are in

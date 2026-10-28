@@ -105,7 +105,32 @@ def _edge(text: str, voice_cfg: dict, out: Path) -> None:
     mp3.unlink(missing_ok=True)
 
 
-ENGINES = {"piper": _piper, "edge": _edge}
+_KOKORO: dict[str, object] = {}
+KOKORO_FILES = {
+    "kokoro-v1.0.onnx": "https://huggingface.co/fastrtc/kokoro-onnx/resolve/main/kokoro-v1.0.onnx",
+    "voices-v1.0.bin": "https://huggingface.co/fastrtc/kokoro-onnx/resolve/main/voices-v1.0.bin",
+}
+
+
+def _kokoro(text: str, voice_cfg: dict, out: Path) -> None:
+    """Kokoro-82M (Apache-2.0): a small, natural-sounding open TTS model."""
+    try:
+        from kokoro_onnx import Kokoro
+    except ImportError as e:  # pragma: no cover - depends on the machine
+        raise SystemExit('Kokoro is not installed: pip install -e ".[kokoro]"') from e
+    folder = ROOT / voice_cfg.get("model_dir", "voices/kokoro")
+    model, voices = folder / "kokoro-v1.0.onnx", folder / "voices-v1.0.bin"
+    if not model.exists() or not voices.exists():
+        raise SystemExit(f"Kokoro model missing in {folder}\nRun: ytc voices download")
+    key = str(folder)
+    if key not in _KOKORO:
+        _KOKORO[key] = Kokoro(str(model), str(voices))
+    samples, sr = _KOKORO[key].create(text, voice=voice_cfg["voice"], speed=voice_cfg.get("speed", 1.0),
+                                      lang=voice_cfg.get("lang", "en-us"))
+    audio.write_wav(out, np.asarray(samples, np.float32), sr)
+
+
+ENGINES = {"piper": _piper, "edge": _edge, "kokoro": _kokoro}
 
 
 def phoneme_weights(sentence: str, voice: str) -> np.ndarray | None:
@@ -230,7 +255,18 @@ def download_voices(names: list[str] | None = None) -> list[Path]:
     cfg = load_config()["voices"]
     got = []
     for name, vc in cfg.items():
-        if vc["engine"] != "piper" or (names and name not in names):
+        if names and name not in names:
+            continue
+        if vc["engine"] == "kokoro":
+            folder = ROOT / vc.get("model_dir", "voices/kokoro")
+            folder.mkdir(parents=True, exist_ok=True)
+            for fname, url in KOKORO_FILES.items():
+                if not (folder / fname).exists():
+                    print(f"downloading {url}")
+                    urllib.request.urlretrieve(url, folder / fname)
+            got.append(folder)
+            continue
+        if vc["engine"] != "piper":
             continue
         model = ROOT / vc["model"]
         stem = model.name.removesuffix(".onnx")            # en_US-kristin-medium
